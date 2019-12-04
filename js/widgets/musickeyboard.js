@@ -1643,10 +1643,10 @@ function MusicKeyboard() {
         mkbKeyboardDiv.innerHTML = ' <div id="keyboardHolder2"><table class="white"><tbody><tr id="myrow"></tr></tbody></table><table class="black"><tbody><tr id="myrow2"></tr></tbody></table></div>'
 
         var keyboardHolder2 = docById('keyboardHolder2');
-        keyboardHolder2.style.bottom = '10px';
+        keyboardHolder2.style.bottom = '0px'; //original = 10px
         keyboardHolder2.style.left = '0px';
-        keyboardHolder2.style.height = '145px'
-        keyboardHolder2.style.width = '700px';
+        keyboardHolder2.style.height = '120px' //original = 145px
+        keyboardHolder2.style.width = '760px'; //original = 700px
         keyboardHolder2.style.backgroundColor = 'white';
 
         var blackRow = document.getElementsByClassName('black');
@@ -1711,7 +1711,7 @@ function MusicKeyboard() {
                 newel.setAttribute('id', 'whiteRow' + myrowId.toString());
                 newel.setAttribute('alt', this.layout[p].noteName + '__' + this.layout[p].noteOctave + '__' + this.layout[p].blockNumber);
                 that.idContainer.push(['whiteRow' + myrowId.toString(), this.layout[p].blockNumber]);
-                newel.innerHTML = '<small>(' + String.fromCharCode(WHITEKEYS[myrowId]) + ')</small><br/>' + this.layout[p].noteOctave;
+                newel.innerHTML = '<small>(' + String.fromCharCode(WHITEKEYS[myrowId]) + ':on <b>your</b> keyboard)</small><br/>' + this.layout[p].noteOctave;
 
                 this.layout[p].objId = 'whiteRow' + myrowId.toString();
 
@@ -1796,9 +1796,9 @@ function MusicKeyboard() {
                 that.idContainer.push(['whiteRow' + myrowId.toString(), this.layout[p].blockNumber]);
 
                 if (SOLFEGENAMES.indexOf(this.layout[p].noteName) !== -1) {
-                    newel.innerHTML = '<small>(' + String.fromCharCode(WHITEKEYS[myrowId]) + ')</small><br/>' + i18nSolfege(this.layout[p].noteName) + this.layout[p].noteOctave;
+                    newel.innerHTML = '<small>(' + String.fromCharCode(WHITEKEYS[myrowId]) + ':on <b>your</b> keyboard)</small><br/>' + i18nSolfege(this.layout[p].noteName) + this.layout[p].noteOctave;
                 } else {
-                    newel.innerHTML = '<small>(' + String.fromCharCode(WHITEKEYS[myrowId]) + ')</small><br/>' + this.layout[p].noteName + this.layout[p].noteOctave;
+                    newel.innerHTML = '<small>(' + String.fromCharCode(WHITEKEYS[myrowId]) + ':on <b>your</b> keyboard)</small><br/>' + this.layout[p].noteName + this.layout[p].noteOctave;
                 }
 
                 this.layout[p].objId = 'whiteRow' + myrowId.toString();
